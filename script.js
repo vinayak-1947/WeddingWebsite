@@ -1,33 +1,33 @@
+/* COUNTDOWN */
+
 const weddingDate =
 new Date("January 27, 2027 00:00:00").getTime();
 
-/* COUNTDOWN */
-
-function updateCountdown() {
+function updateCountdown(){
 
     const now = new Date().getTime();
 
     const diff = weddingDate - now;
 
     const days =
-    Math.floor(diff / (1000 * 60 * 60 * 24));
+    Math.floor(diff / (1000*60*60*24));
 
     const hours =
     Math.floor(
-        (diff % (1000 * 60 * 60 * 24))
-        / (1000 * 60 * 60)
+        (diff % (1000*60*60*24))
+        /(1000*60*60)
     );
 
     const minutes =
     Math.floor(
-        (diff % (1000 * 60 * 60))
-        / (1000 * 60)
+        (diff % (1000*60*60))
+        /(1000*60)
     );
 
     const seconds =
     Math.floor(
-        (diff % (1000 * 60))
-        / 1000
+        (diff % (1000*60))
+        /1000
     );
 
     document.getElementById("days").textContent = days;
@@ -36,16 +36,19 @@ function updateCountdown() {
     document.getElementById("seconds").textContent = seconds;
 }
 
-setInterval(updateCountdown, 1000);
+setInterval(updateCountdown,1000);
 updateCountdown();
 
 /* RSVP */
 
-function comingSoon() {
-    alert("RSVP form will be available soon.");
+function comingSoon(){
+
+    alert(
+        "RSVP form will be linked soon."
+    );
 }
 
-/* HAMBURGER */
+/* MOBILE MENU */
 
 const hamburger =
 document.getElementById("hamburger");
@@ -53,60 +56,61 @@ document.getElementById("hamburger");
 const navLinks =
 document.getElementById("navLinks");
 
-hamburger.addEventListener("click", () => {
+hamburger.addEventListener("click",()=>{
+
     navLinks.classList.toggle("active");
 });
 
-/* SCROLL ANIMATION */
+/* SCROLL REVEAL */
 
 const observer =
-new IntersectionObserver((entries) => {
+new IntersectionObserver((entries)=>{
 
-    entries.forEach(entry => {
+    entries.forEach(entry=>{
 
-        if (entry.isIntersecting) {
+        if(entry.isIntersecting){
+
             entry.target.classList.add("show");
         }
-
     });
 
-}, { threshold: 0.15 });
+},{threshold:0.15});
 
 document.querySelectorAll(".hidden")
-.forEach(el => observer.observe(el));
+.forEach(el=>observer.observe(el));
 
 /* ACTIVE NAV */
 
 const sections =
-document.querySelectorAll("section, header");
+document.querySelectorAll("section,header");
 
 const links =
 document.querySelectorAll(".nav-link");
 
-window.addEventListener("scroll", () => {
+window.addEventListener("scroll",()=>{
 
-    let current = "";
+    let current="";
 
-    sections.forEach(section => {
+    sections.forEach(section=>{
 
-        const top =
+        const top=
         section.offsetTop - 150;
 
-        if (scrollY >= top) {
+        if(scrollY >= top){
 
-            current =
+            current=
             section.getAttribute("id");
         }
     });
 
-    links.forEach(link => {
+    links.forEach(link=>{
 
         link.classList.remove("active");
 
-        if (
+        if(
             link.getAttribute("href")
             === "#" + current
-        ) {
+        ){
             link.classList.add("active");
         }
     });

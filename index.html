@@ -10,10 +10,25 @@
 
 <body>
 
+    <!-- PARTICLES -->
+
+    <div class="particles">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <!-- NAVBAR -->
+
     <nav class="navbar">
 
-        <div class="nav-logo">
-            Vinayak ❤️ Sneha
+        <div class="logo">
+            VS
         </div>
 
         <div class="hamburger" id="hamburger">
@@ -21,24 +36,40 @@
         </div>
 
         <ul class="nav-links" id="navLinks">
+
             <li><a href="#home" class="nav-link active">Home</a></li>
+            <li><a href="#invitation" class="nav-link">Invitation</a></li>
             <li><a href="#timeline" class="nav-link">Events</a></li>
-            <li><a href="#stay" class="nav-link">Stay</a></li>
             <li><a href="#travel" class="nav-link">Travel</a></li>
-            <li><a href="#dresscode" class="nav-link">Dress Code</a></li>
             <li><a href="#rsvp" class="nav-link">RSVP</a></li>
             <li><a href="#contact" class="nav-link">Contact</a></li>
+
         </ul>
 
     </nav>
+
+    <!-- HERO -->
 
     <header id="home" class="hero">
 
         <div class="hero-content">
 
-            <p class="sanskrit">
-                ॥ श्री गणेशाय नमः ॥
-            </p>
+            <div class="om-symbol">
+                ॐ नमः शिवाय
+            </div>
+
+            <img
+                src="shiv-parvati-main.png"
+                class="hero-image"
+                alt="Shiv Parvati">
+
+            <div class="monogram">
+
+                <div class="monogram-inner">
+                    VS
+                </div>
+
+            </div>
 
             <h1>
                 Vinayak ❤️ Sneha
@@ -48,47 +79,82 @@
                 Together With Their Families
             </p>
 
-            <p class="invite-text">
-                Request the pleasure of your company and blessings
-                as they begin a new chapter of life together.
-            </p>
-
             <p class="date">
                 27 January 2027
             </p>
 
-            <a href="#timeline" class="btn">
-                View Celebration Schedule
+            <a href="#invitation" class="btn">
+                Begin Invitation
             </a>
 
         </div>
 
     </header>
 
-    <!-- Countdown -->
+    <!-- INVITATION -->
+
+    <section id="invitation" class="section hidden">
+
+        <h2>॥ श्री गणेशाय नमः ॥</h2>
+
+        <div class="invitation-card">
+
+            <p>
+                With the blessings of Lord Shiva and Maa Parvati,
+                and with the love and blessings of our parents,
+                elders, family and friends,
+                we warmly invite you to celebrate
+                the joyous union of
+            </p>
+
+            <h3>
+                Vinayak ❤️ Sneha
+            </h3>
+
+            <p>
+                and bless us as we embark
+                upon a beautiful journey together.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- DIVINE IMAGE -->
 
     <section class="section hidden">
 
-        <h2>Countdown To The Wedding</h2>
+        <img
+            src="shiv-parvati-hands.png"
+            class="blessing-image"
+            alt="Divine Blessing">
 
-        <div class="countdown-container">
+    </section>
 
-            <div class="count-card hidden">
+    <!-- COUNTDOWN -->
+
+    <section class="section hidden">
+
+        <h2>Countdown To Wedding</h2>
+
+        <div class="countdown">
+
+            <div class="count-box">
                 <span id="days">0</span>
                 <small>Days</small>
             </div>
 
-            <div class="count-card hidden">
+            <div class="count-box">
                 <span id="hours">0</span>
                 <small>Hours</small>
             </div>
 
-            <div class="count-card hidden">
+            <div class="count-box">
                 <span id="minutes">0</span>
                 <small>Minutes</small>
             </div>
 
-            <div class="count-card hidden">
+            <div class="count-box">
                 <span id="seconds">0</span>
                 <small>Seconds</small>
             </div>
@@ -97,153 +163,77 @@
 
     </section>
 
-    <!-- Invitation -->
-
-    <section class="section hidden">
-
-        <h2>Wedding Invitation</h2>
-
-        <div class="card hidden">
-
-            <p>
-                With the blessings of our parents, elders,
-                family and friends, we warmly invite you to
-                celebrate this joyous occasion and bless us
-                with your presence.
-            </p>
-
-        </div>
-
-    </section>
-
-    <!-- Hosts -->
-
-    <section class="section hidden">
-
-        <h2>Hosted By</h2>
-
-        <div class="card hidden center-card">
-
-            <h3>The Family of Vinayak</h3>
-
-            <p>&</p>
-
-            <h3>The Family of Sneha</h3>
-
-        </div>
-
-    </section>
-
-    <!-- Timeline -->
+    <!-- TIMELINE -->
 
     <section id="timeline" class="section hidden">
 
-        <h2>Celebration Timeline</h2>
+        <h2>Wedding Celebrations</h2>
 
         <div class="timeline">
 
             <div class="timeline-item hidden">
-                <div class="timeline-icon">🪔</div>
+
+                <div class="icon">🪔</div>
 
                 <div class="timeline-content">
                     <h3>Matkor</h3>
                     <p>25 January 2027</p>
                     <p>At Home</p>
                 </div>
+
             </div>
 
             <div class="timeline-item hidden">
-                <div class="timeline-icon">🌼</div>
+
+                <div class="icon">🌼</div>
 
                 <div class="timeline-content">
                     <h3>Haldi & Mehendi</h3>
                     <p>26 January 2027</p>
                     <p>At Home</p>
                 </div>
+
             </div>
 
             <div class="timeline-item hidden">
-                <div class="timeline-icon">💍</div>
+
+                <div class="icon">💍</div>
 
                 <div class="timeline-content">
                     <h3>Wedding Ceremony</h3>
                     <p>27 January 2027</p>
                     <p>Venue To Be Announced</p>
                 </div>
+
             </div>
 
         </div>
 
     </section>
 
-    <!-- Stay -->
+    <!-- TRAVEL -->
 
-    <section id="stay" class="section hidden">
+    <section id="travel" class="section hidden">
 
-        <h2>Accommodation</h2>
+        <h2>Travel & Stay</h2>
 
-        <div class="card hidden">
+        <div class="glass-card">
 
             <h3>Family Guests</h3>
 
-            <ul>
-                <li>Vinayak's Residence</li>
-                <li>Maternal Uncle's Residence</li>
-            </ul>
+            <p>
+                Accommodation at Vinayak's Home
+                and Maternal Uncle's Residence.
+            </p>
 
         </div>
 
-        <div class="card hidden">
+        <div class="glass-card">
 
             <h3>Friends</h3>
 
             <p>
-                Hotel details will be shared closer to the wedding.
-            </p>
-
-        </div>
-
-    </section>
-
-    <!-- Travel -->
-
-    <section id="travel" class="section hidden">
-
-        <h2>Travel Information</h2>
-
-        <div class="card hidden">
-            <h3>Nearest Railway Station</h3>
-            <p>TBD</p>
-        </div>
-
-        <div class="card hidden">
-            <h3>Nearest Airport</h3>
-            <p>TBD</p>
-        </div>
-
-        <div class="card hidden">
-            <h3>Local Transportation</h3>
-            <p>Details will be shared closer to the wedding date.</p>
-        </div>
-
-    </section>
-
-    <!-- Dress Code -->
-
-    <section id="dresscode" class="section hidden">
-
-        <h2>Dress Code</h2>
-
-        <div class="card hidden">
-
-            <h3>Traditional Indian Attire Preferred</h3>
-
-            <p>
-                Ladies: Saree, Lehenga or Traditional Suit
-            </p>
-
-            <p>
-                Gentlemen: Kurta-Pajama, Sherwani or Ethnic Formal Wear
+                Hotel details will be shared soon.
             </p>
 
         </div>
@@ -254,60 +244,33 @@
 
     <section id="rsvp" class="section hidden">
 
-        <h2>RSVP</h2>
-
-        <p>
-            Kindly confirm your attendance.
-        </p>
+        <h2>Your Presence Means The World To Us</h2>
 
         <button class="btn" onclick="comingSoon()">
-            Confirm Attendance
+            RSVP
         </button>
 
     </section>
 
-    <!-- FAQ -->
-
-    <section class="section hidden">
-
-        <h2>Frequently Asked Questions</h2>
-
-        <div class="card hidden">
-            <h3>Is accommodation available?</h3>
-            <p>Yes.</p>
-        </div>
-
-        <div class="card hidden">
-            <h3>When should I arrive?</h3>
-            <p>Please arrive at least one hour before the ceremony.</p>
-        </div>
-
-        <div class="card hidden">
-            <h3>Will venue details be shared?</h3>
-            <p>Yes, they will be updated soon.</p>
-        </div>
-
-    </section>
-
-    <!-- Contact -->
+    <!-- CONTACT -->
 
     <section id="contact" class="section hidden">
 
         <h2>Contact</h2>
 
-        <div class="card hidden">
+        <div class="glass-card">
 
             <h3>Groom Side Coordinator</h3>
-            <p>Name: TBD</p>
-            <p>Phone: TBD</p>
+
+            <p>To Be Updated</p>
 
         </div>
 
-        <div class="card hidden">
+        <div class="glass-card">
 
             <h3>Bride Side Coordinator</h3>
-            <p>Name: TBD</p>
-            <p>Phone: TBD</p>
+
+            <p>To Be Updated</p>
 
         </div>
 
