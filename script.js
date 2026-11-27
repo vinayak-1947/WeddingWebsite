@@ -1,17 +1,17 @@
-/* ==========================================
-   WEDDING DATE COUNTDOWN
-========================================== */
+/* =========================================
+   WEDDING COUNTDOWN
+========================================= */
 
-const weddingDate =
-new Date("January 27, 2027 00:00:00").getTime();
+const weddingDate = new Date(
+    "January 27, 2027 00:00:00"
+).getTime();
 
 function updateCountdown() {
 
-    const now =
-    new Date().getTime();
+    const now = new Date().getTime();
 
     const difference =
-    weddingDate - now;
+        weddingDate - now;
 
     if (difference <= 0) {
 
@@ -23,34 +23,35 @@ function updateCountdown() {
         return;
     }
 
-    const days =
-    Math.floor(
+    const days = Math.floor(
         difference /
         (1000 * 60 * 60 * 24)
     );
 
-    const hours =
-    Math.floor(
-        (difference %
-            (1000 * 60 * 60 * 24))
+    const hours = Math.floor(
+        (
+            difference %
+            (1000 * 60 * 60 * 24)
+        )
         /
         (1000 * 60 * 60)
     );
 
-    const minutes =
-    Math.floor(
-        (difference %
-            (1000 * 60 * 60))
+    const minutes = Math.floor(
+        (
+            difference %
+            (1000 * 60 * 60)
+        )
         /
         (1000 * 60)
     );
 
-    const seconds =
-    Math.floor(
-        (difference %
-            (1000 * 60))
-        /
-        1000
+    const seconds = Math.floor(
+        (
+            difference %
+            (1000 * 60)
+        )
+        / 1000
     );
 
     document.getElementById("days").textContent =
@@ -73,30 +74,19 @@ setInterval(
     1000
 );
 
-/* ==========================================
-   RSVP PLACEHOLDER
-========================================== */
-
-function comingSoon() {
-
-    alert(
-        "RSVP form will be connected soon. ❤️"
-    );
-}
-
-/* ==========================================
-   MOBILE HAMBURGER MENU
-========================================== */
+/* =========================================
+   MOBILE MENU
+========================================= */
 
 const hamburger =
-document.getElementById(
-    "hamburger"
-);
+    document.getElementById(
+        "hamburger"
+    );
 
 const navLinks =
-document.getElementById(
-    "navLinks"
-);
+    document.getElementById(
+        "navLinks"
+    );
 
 hamburger.addEventListener(
     "click",
@@ -109,112 +99,155 @@ hamburger.addEventListener(
     }
 );
 
-/* ==========================================
-   CLOSE MENU AFTER CLICK
-========================================== */
+/* =========================================
+   CLOSE MENU ON CLICK
+========================================= */
 
 document
-.querySelectorAll(".nav-link")
-.forEach(link => {
+    .querySelectorAll(".nav-link")
+    .forEach(link => {
 
-    link.addEventListener(
-        "click",
-        () => {
+        link.addEventListener(
+            "click",
+            () => {
 
-            navLinks.classList.remove(
-                "active"
+                navLinks.classList.remove(
+                    "active"
+                );
+
+            }
+        );
+
+    });
+
+/* =========================================
+   CINEMATIC HERO REVEAL
+========================================= */
+
+window.addEventListener(
+    "load",
+    () => {
+
+        const revealElements =
+            document.querySelectorAll(
+                ".reveal"
+            );
+
+        revealElements.forEach(
+            (
+                element,
+                index
+            ) => {
+
+                setTimeout(
+                    () => {
+
+                        element.style.opacity =
+                            "1";
+
+                        element.style.transform =
+                            "translateY(0)";
+
+                    },
+
+                    index * 400
+                );
+
+            }
+        );
+
+    }
+);
+
+/* =========================================
+   SCROLL REVEAL ANIMATION
+========================================= */
+
+const revealObserver =
+    new IntersectionObserver(
+
+        entries => {
+
+            entries.forEach(
+                entry => {
+
+                    if (
+                        entry.isIntersecting
+                    ) {
+
+                        entry.target.classList.add(
+                            "show"
+                        );
+
+                    }
+
+                }
+            );
+
+        },
+
+        {
+            threshold: 0.15
+        }
+
+    );
+
+document
+    .querySelectorAll(".hidden")
+    .forEach(
+        element => {
+
+            revealObserver.observe(
+                element
             );
 
         }
     );
 
-});
-
-/* ==========================================
-   SECTION REVEAL ANIMATION
-========================================== */
-
-const observer =
-new IntersectionObserver(
-
-    (entries) => {
-
-        entries.forEach(
-            (entry) => {
-
-                if (
-                    entry.isIntersecting
-                ) {
-
-                    entry.target.classList.add(
-                        "show"
-                    );
-
-                }
-
-            }
-        );
-
-    },
-
-    {
-        threshold: 0.15
-    }
-
-);
-
-document
-.querySelectorAll(".hidden")
-.forEach(element => {
-
-    observer.observe(element);
-
-});
-
-/* ==========================================
-   ACTIVE NAVIGATION HIGHLIGHT
-========================================== */
+/* =========================================
+   ACTIVE NAVIGATION
+========================================= */
 
 const sections =
-document.querySelectorAll(
-    "section, header"
-);
+    document.querySelectorAll(
+        "section, header"
+    );
 
-const navItems =
-document.querySelectorAll(
-    ".nav-link"
-);
+const navigationLinks =
+    document.querySelectorAll(
+        ".nav-link"
+    );
 
 window.addEventListener(
     "scroll",
+
     () => {
 
-        let currentSection =
-        "home";
+        let current = "home";
 
         sections.forEach(
-            (section) => {
+            section => {
 
                 const sectionTop =
-                section.offsetTop - 150;
+                    section.offsetTop - 180;
 
                 if (
                     window.scrollY >=
                     sectionTop
                 ) {
 
-                    currentSection =
-                    section.getAttribute(
-                        "id"
-                    );
+                    current =
+                        section.getAttribute(
+                            "id"
+                        );
 
                 }
 
             }
         );
 
-        navItems.forEach(
-            (link) => {
+        navigationLinks.forEach(
+            link => {
 
                 link.classList.remove(
                     "active"
@@ -224,8 +257,7 @@ window.addEventListener(
                     link.getAttribute(
                         "href"
                     ) ===
-                    "#" +
-                    currentSection
+                    "#" + current
                 ) {
 
                     link.classList.add(
@@ -240,54 +272,14 @@ window.addEventListener(
     }
 );
 
-/* ==========================================
-   HERO CINEMATIC REVEAL
-========================================== */
-
-window.addEventListener(
-    "load",
-    () => {
-
-        const revealItems =
-        document.querySelectorAll(
-            ".reveal"
-        );
-
-        revealItems.forEach(
-            (
-                item,
-                index
-            ) => {
-
-                setTimeout(
-                    () => {
-
-                        item.style.opacity =
-                            "1";
-
-                        item.style.transform =
-                            "translateY(0)";
-
-                    },
-
-                    index * 400
-
-                );
-
-            }
-        );
-
-    }
-);
-
-/* ==========================================
+/* =========================================
    PARALLAX EFFECT
-========================================== */
+========================================= */
 
-const parallaxImages =
-document.querySelectorAll(
-    ".parallax"
-);
+const parallaxItems =
+    document.querySelectorAll(
+        ".parallax"
+    );
 
 window.addEventListener(
     "scroll",
@@ -297,13 +289,13 @@ window.addEventListener(
         const scrollPosition =
             window.pageYOffset;
 
-        parallaxImages.forEach(
-            image => {
+        parallaxItems.forEach(
+            item => {
 
-                image.style.transform =
-                `translateY(${
-                    scrollPosition * 0.08
-                }px)`;
+                const speed = 0.08;
+
+                item.style.transform =
+                    `translateY(${scrollPosition * speed}px)`;
 
             }
         );
@@ -311,92 +303,111 @@ window.addEventListener(
     }
 );
 
-/* ==========================================
-   BUTTON SHIMMER EFFECT
-========================================== */
+/* =========================================
+   RSVP PLACEHOLDER
+========================================= */
 
-const buttons =
-document.querySelectorAll(
-    ".btn"
+function comingSoon() {
+
+    alert(
+        "RSVP form will be added soon ❤️"
+    );
+
+}
+
+/* =========================================
+   SCROLL INDICATOR AUTO HIDE
+========================================= */
+
+const scrollIndicator =
+    document.querySelector(
+        ".scroll-indicator"
+    );
+
+window.addEventListener(
+    "scroll",
+
+    () => {
+
+        if (!scrollIndicator) {
+            return;
+        }
+
+        if (window.scrollY > 150) {
+
+            scrollIndicator.style.opacity =
+                "0";
+
+        } else {
+
+            scrollIndicator.style.opacity =
+                "1";
+
+        }
+
+    }
 );
 
-buttons.forEach(button => {
+/* =========================================
+   TIMELINE STAGGER EFFECT
+========================================= */
 
-    button.addEventListener(
-        "mouseenter",
+const timelineObserver =
+    new IntersectionObserver(
 
-        () => {
+        entries => {
 
-            button.style.transition =
-                "all 0.3s ease";
+            entries.forEach(
+                entry => {
 
+                    if (
+                        entry.isIntersecting
+                    ) {
+
+                        const items =
+                            document.querySelectorAll(
+                                ".timeline-item"
+                            );
+
+                        items.forEach(
+                            (
+                                item,
+                                index
+                            ) => {
+
+                                setTimeout(
+                                    () => {
+
+                                        item.style.opacity =
+                                            "1";
+
+                                        item.style.transform =
+                                            "translateY(0)";
+
+                                    },
+
+                                    index * 250
+                                );
+
+                            }
+                        );
+
+                    }
+
+                }
+            );
+
+        },
+
+        {
+            threshold: 0.2
         }
     );
 
-});
-
-/* ==========================================
-   TIMELINE STAGGER ANIMATION
-========================================== */
-
-const timelineObserver =
-new IntersectionObserver(
-
-    (entries) => {
-
-        entries.forEach(
-            entry => {
-
-                if (
-                    entry.isIntersecting
-                ) {
-
-                    const timelineItems =
-                    document.querySelectorAll(
-                        ".timeline-item"
-                    );
-
-                    timelineItems.forEach(
-                        (
-                            item,
-                            index
-                        ) => {
-
-                            setTimeout(
-                                () => {
-
-                                    item.style.opacity =
-                                        "1";
-
-                                    item.style.transform =
-                                        "translateY(0)";
-
-                                },
-
-                                index * 250
-
-                            );
-
-                        }
-                    );
-
-                }
-
-            }
-        );
-
-    },
-
-    {
-        threshold: 0.2
-    }
-
-);
-
 const timeline =
-document.querySelector(
-    ".timeline"
-);
+    document.querySelector(
+        ".timeline"
+    );
 
 if (timeline) {
 
@@ -406,34 +417,24 @@ if (timeline) {
 
 }
 
-/* ==========================================
-   INITIAL STYLES FOR REVEAL
-========================================== */
+/* =========================================
+   INITIAL TIMELINE STATE
+========================================= */
 
 document
-.querySelectorAll(".reveal")
-.forEach(item => {
+    .querySelectorAll(
+        ".timeline-item"
+    )
+    .forEach(
+        item => {
 
-    item.style.opacity = "0";
+            item.style.opacity = "0";
 
-    item.style.transform =
-        "translateY(40px)";
+            item.style.transform =
+                "translateY(40px)";
 
-    item.style.transition =
-        "all 1s ease";
+            item.style.transition =
+                "all 0.8s ease";
 
-});
-
-document
-.querySelectorAll(".timeline-item")
-.forEach(item => {
-
-    item.style.opacity = "0";
-
-    item.style.transform =
-        "translateY(30px)";
-
-    item.style.transition =
-        "all 0.8s ease";
-
-});
+        }
+    );
